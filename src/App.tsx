@@ -1,11 +1,22 @@
+import { Container, createTheme, CssBaseline, ThemeProvider } from "@mui/material";
+import { RouterProvider } from "react-router-dom";
+import router from "./components/auth/Routes";
+
+const theme = createTheme({
+  palette: {
+    mode: "dark"
+  }
+});
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        ss
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Container>
+        <RouterProvider router={router} />
+      </Container>
+    </ThemeProvider>
   );
 }
 
